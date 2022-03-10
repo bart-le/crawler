@@ -26,7 +26,7 @@ namespace Crawler
 			}
 			catch (IndexOutOfRangeException exception)
 			{
-				throw new ArgumentNullException("Podaj 1 argument", exception);
+				throw new ArgumentNullException("Nie podano argumentu", exception);
 			}
 		}
 
