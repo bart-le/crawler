@@ -63,7 +63,11 @@ namespace Crawler
 			{
 				HttpResponseMessage response = await httpClient.GetAsync(url);
 
-				return await response.Content.ReadAsStringAsync();
+				string content = await response.Content.ReadAsStringAsync();
+
+				httpClient.Dispose();
+
+				return content;
 			}
 			catch (HttpRequestException)
 			{
