@@ -65,13 +65,15 @@ namespace Crawler
 
 				string content = await response.Content.ReadAsStringAsync();
 
-				httpClient.Dispose();
-
 				return content;
 			}
 			catch (HttpRequestException)
 			{
 				throw new HttpRequestException("Błąd w czasie pobierania strony");
+			}
+			finally
+			{
+				httpClient.Dispose();
 			}
 		}
 	}
